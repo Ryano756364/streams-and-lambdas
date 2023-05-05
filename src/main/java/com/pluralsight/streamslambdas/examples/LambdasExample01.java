@@ -16,13 +16,8 @@ public class LambdasExample01 {
     public static void main(String[] args) {
         List<Product> products = ExampleData.getProducts();
 
-        //(1) sort products by price with anonymous classes
-        products.sort(new Comparator<Product>() {
-            @Override
-            public int compare(Product o1, Product o2) {
-                return o1.getPrice().compareTo(o2.getPrice());
-            }
-        });
+        //(1) now we have the lambda expression
+        products.sort((o1, o2) -> o1.getPrice().compareTo(o2.getPrice()));
 
 
         for (Product product : products) {
