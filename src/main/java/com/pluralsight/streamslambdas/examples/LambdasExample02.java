@@ -13,6 +13,11 @@ import java.util.List;
 
 public class LambdasExample02 {
 
+    //Setup of a interface for other arbitrary requirements.
+    interface ProductFilter {
+        boolean accept(Product product);
+    }
+
     // Print the products that cost less than the price limit.
     static void printProducts(List<Product> products, BigDecimal priceLimit) {
         //We could run a loop to get this done.
