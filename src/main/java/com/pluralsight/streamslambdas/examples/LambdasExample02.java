@@ -19,10 +19,10 @@ public class LambdasExample02 {
     }
 
     // Print the products that cost less than the price limit.
-    static void printProducts(List<Product> products, BigDecimal priceLimit) {
+    static void printProducts(List<Product> products, ProductFilter filter) {
         //We could run a loop to get this done.
         for (Product product : products) {
-            if (product.getPrice().compareTo(priceLimit) < 0) {
+            if (filter.accept(product)) {
                 System.out.println(product);
             }
         }
